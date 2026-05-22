@@ -1,17 +1,8 @@
-# Imagen base ligera con Python preinstalado
-FROM python:3.11-slim
+FROM public.ecr.aws/lambda/python:3.12
 
-# Define el directorio de trabajo dentro del contenedor
-WORKDIR /app
+COPY requirements.txt ${LAMBDA_TASK_ROOT}
+RUN pip install -r requirements.txt --target ${LAMBDA_TASK_ROOT}
 
-# Copia todos los archivos del proyecto al directorio /app del contenedor
-COPY . /app
+COPY . ${LAMBDA_TASK_ROOT}
 
-# Instalar las dependencias
-RUN pip install -r requirements.txt
-
-# Expone el puerto 8000 (para que se pueda acceder desde el navegador)
-EXPOSE 8000
-
-# Comando que se ejecutará cuando se inicie el contenedor
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["main.handler"]
