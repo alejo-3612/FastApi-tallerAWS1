@@ -365,24 +365,3 @@ Las credenciales de AWS se configuran mediante el rol IAM asignado a la función
 
 ---
 
-## Dependencias
-
-```
-fastapi==0.115.5
-mangum==0.19.0
-mysql-connector-python==9.1.0
-boto3==1.35.76
-python-multipart==0.0.17
-pydantic==2.10.3
-```
-
----
-
-## Servicios AWS utilizados
-
-- **Amazon S3** — Almacenamiento de imágenes
-- **Amazon RDS (MySQL)** — Base de datos relacional
-- **Amazon ECR** — Registro de contenedores Docker
-- **AWS Lambda** — Ejecución serverless de la aplicación
-- **Amazon EC2** — Despliegue de la aplicación FastAPI base
-- **AWS IAM** — Gestión de permisos y roles
