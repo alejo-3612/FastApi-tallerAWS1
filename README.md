@@ -365,3 +365,6 @@ Las credenciales de AWS se configuran mediante el rol IAM asignado a la función
 
 ---
 
+## Realizado por
+
+Sebastian Higuita & Alejandro Sanchez
